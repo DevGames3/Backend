@@ -46,11 +46,7 @@ const userLogin = async (req, res, next) => {
   } catch (error) {
     return res.send(error).status(400);
   }
-  return res.cookie("token", token).send(payload);
-};
-
-const userMe = (req, res, next) => {
-  res.send(req.user);
+  return res.send({ token, payload });
 };
 
 const userMeEdit = async (req, res, next) => {
@@ -67,12 +63,7 @@ const userMeEdit = async (req, res, next) => {
   } catch (error) {
     return res.send(error).status(400);
   }
-  return res.cookie("token", token).send(payload);
-};
-
-const userLogout = (req, res) => {
-  res.clearCookie("token");
-  res.status(204).send("logout");
+  return res.send({ payload, token });
 };
 
 const allUsers = async (req, res, next) => {
@@ -114,9 +105,9 @@ const adminDeleteAUser = async (req, res, next) => {
 module.exports = {
   userRegister,
   userLogin,
-  userMe,
+
   userMeEdit,
-  userLogout,
+
   allUsers,
   adminAccessToUser,
   adminDeleteAUser,

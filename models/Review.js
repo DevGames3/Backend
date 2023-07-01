@@ -10,7 +10,8 @@ Review.init(
       defaultValue: "",
     },
     rating: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL ,
+      defaultValue: 0,
       allowNull: true,
       validate: {
         max: 5,

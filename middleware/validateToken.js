@@ -1,7 +1,9 @@
 const { verifyToken } = require("../utils/token");
 
 const validateToken = (req, res, next) => {
-  const token = req.cookies.token;
+  const {token} = req.body;
+
+  console.log(req.body)
 
   if (!token) return res.sendStatus(401);
 

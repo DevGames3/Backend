@@ -12,7 +12,7 @@ const router = express.Router();
 router.get("/:gameId/", getAllReviewsOfAGame);
 
 // Get a review of a game from a User
-router.get("/:gameId/:userId", getAReviewOfAGameFromAUser);
+router.get("/:gameId/:userName", getAReviewOfAGameFromAUser);
 
 // Create a review for a game from a user
 router.post("/:gameId/:userId", createAReviewForAGameFromAUser);

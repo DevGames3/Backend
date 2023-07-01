@@ -17,16 +17,12 @@ router.post("/register", userRegister);
 
 router.post("/login", userLogin);
 
-router.get("/me", validateToken, userMe);
-
 router.put("/me/edit", validateToken, userMeEdit);
 
-router.post("/logout", userLogout);
-
-router.get("/admin", validateToken, allUsers);
+router.post("/admin", validateToken, allUsers);
 
 router.put("/admin/access/:id", validateToken, adminAccessToUser);
 
-router.delete("/admin/delete/:id", validateToken, adminDeleteAUser);
+router.post("/admin/delete/:id", validateToken, adminDeleteAUser);
 
 module.exports = router;
