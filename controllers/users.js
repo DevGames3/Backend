@@ -43,10 +43,12 @@ const userLogin = async (req, res, next) => {
       isAdmin: user.isAdmin,
     };
     token = generateToken(payload);
+    console.log(payload)
+     return res.send({ token, payload });
   } catch (error) {
     return res.send(error).status(400);
   }
-  return res.send({ token, payload });
+ 
 };
 
 const userMeEdit = async (req, res, next) => {
