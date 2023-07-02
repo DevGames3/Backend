@@ -46,7 +46,7 @@ const userLogin = async (req, res, next) => {
     console.log(payload)
      return res.send({ token, payload });
   } catch (error) {
-    return res.send(error).status(400);
+    return console.log(error);
   }
  
 };
