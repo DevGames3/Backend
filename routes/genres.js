@@ -18,6 +18,6 @@ router.post("/create", validateToken, createAGenre);
 
 router.put("/edit/:name", validateToken, editAGenre);
 
-router.delete("/:id", validateToken, deleteAGenre);
+router.post("/:id", validateToken, deleteAGenre);
 
 module.exports = router;
