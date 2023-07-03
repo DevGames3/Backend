@@ -20,7 +20,7 @@ async function unionOfGames(gameSeed) {
     game.setDevelopers(editDevelopers);
     game.setPlatforms(editPlatforms);
   } catch (error) {
-    return console.log(error);
+    return console.log(error, "im here, I,m the error");
   }
 }
 
